@@ -21,9 +21,10 @@
 
     <div id="app-4">
         <ol>
-            <li v-for="todo in todos">
-                {{ todo.text }}
-            </li>
+            <!--<li v-for="todo in todos">
+        {{ todo.text }}
+    </li>-->
+            <todo-item></todo-item>
         </ol>
     </div>
 
@@ -79,6 +80,10 @@
             }
         })
 
+        Vue.component('todo-item', {
+            template: '<li>This is a todo</li>'
+        })
+
         var app4 = new Vue({
             el: '#app-4',
             data: {
@@ -109,6 +114,7 @@
                 message: 'Hello Vue!'
             }
         })
+
     </script>
 </body>
 </html>
