@@ -15,6 +15,9 @@
         </span>
     </div>
 
+    <div id="app-3">
+        <span v-if="seen">Now you see me but I will disappear in 5 seconds!!!!</span>
+    </div>
 
     <script>
         var app = new Vue({
@@ -33,6 +36,8 @@
             console.log("Example page has loaded!");
             //app.message = "Hello World From Vue 2.x!";
 
+            setTimeout(function () { app3.seen = false }, 7 * 1000);
+
             setTimeout(MyGreeting, 5 * 1000);
 
             setTimeout(function () {
@@ -46,8 +51,14 @@
                 message: 'You loaded this page on ' + app.message + ' ' + new Date().toLocaleString()
             }
         })
+
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                seen: true
             }
         })
+
     </script>
 </body>
 </html>
