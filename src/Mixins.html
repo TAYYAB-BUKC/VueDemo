@@ -63,32 +63,47 @@
         //// => "mixin hook called"
         //// => "component hook called"
 
-        var mixin = {
-            methods: {
-                foo: function () {
-                    alert('foo')
-                },
-                conflicting: function () {
-                    alert('from mixin')
-                }
-            }
-        }
+        //var mixin = {
+        //    methods: {
+        //        foo: function () {
+        //            alert('foo')
+        //        },
+        //        conflicting: function () {
+        //            alert('from mixin')
+        //        }
+        //    }
+        //}
 
-        var vm = new Vue({
-            mixins: [mixin],
-            methods: {
-                bar: function () {
-                    alert('bar')
-                },
-                conflicting: function () {
-                    alert('from self')
+        //var vm = new Vue({
+        //    mixins: [mixin],
+        //    methods: {
+        //        bar: function () {
+        //            alert('bar')
+        //        },
+        //        conflicting: function () {
+        //            alert('from self')
+        //        }
+        //    }
+        //})
+
+        //vm.foo() // => "foo"
+        //vm.bar() // => "bar"
+        //vm.conflicting() // => "from self"
+
+        // inject a handler for `myOption` custom option
+        Vue.mixin({
+            created: function () {
+                var myOption = this.$options.myOption
+                if (myOption) {
+                    alert(myOption)
                 }
             }
         })
 
-        vm.foo() // => "foo"
-        vm.bar() // => "bar"
-        vm.conflicting() // => "from self"
+        new Vue({
+            myOption: 'hello from Global Mixin!'
+        })
+        // => "hello!"
 
     </script>
 </body>
