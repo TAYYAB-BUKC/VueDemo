@@ -6,6 +6,10 @@
 <template>
   <main class="main">
       <!--<RouterView  />-->
+        <a href="/">Default</a> |
+        <a href="/hello">Hello</a> |
+        <a href="/about">About</a> |
+        <a href="/non-existent-path">Broken Link</a>
       <router-view></router-view>
   </main>
 </template>
