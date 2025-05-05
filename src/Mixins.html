@@ -1,0 +1,28 @@
+<!Doctype="html">
+<html>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <script>
+        // define a mixin object
+        var myMixin = {
+            created: function () {
+                this.hello()
+            },
+            methods: {
+                hello: function () {
+                    alert('hello from mixin!');
+                }
+            }
+        }
+
+        // define a component that uses this mixin
+        var Component = Vue.extend({
+            mixins: [myMixin]
+        })
+
+        var component = new Component() // => "hello from mixin!"
+    </script>
+</body>
+</html>
