@@ -6,11 +6,11 @@
 <template>
     <main class="main">
         <!--<RouterView  />-->
-        <a href="/">Default</a> |
-        <a href="/hello">Hello</a> |
-        <a href="/about">About</a> |
-        <a href="/refs">Refs</a> |
-        <a href="/non-existent-path">Broken Link</a>
+        <router-link to="/">Default</router-link> |
+        <router-link to="/about">About</router-link>
+        <router-link to="/hello">Hello</router-link> |
+        <router-link to="/refs">Refs</router-link> |
+        <router-link to="/non-existent-path">Broken Link</router-link>
         <router-view></router-view>
     </main>
 </template>
