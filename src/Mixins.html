@@ -17,12 +17,35 @@
             }
         }
 
-        // define a component that uses this mixin
-        var Component = Vue.extend({
-            mixins: [myMixin]
-        })
+        //// define a component that uses this mixin
+        //var Component = Vue.extend({
+        //    mixins: [myMixin]
+        //})
 
-        var component = new Component() // => "hello from mixin!"
+        //var component = new Component() // => "hello from mixin!"
+
+        var mixin = {
+            data: function () {
+                return {
+                    message: 'hello',
+                    foo: 'abc'
+                }
+            }
+        }
+
+        new Vue({
+            mixins: [mixin, myMixin],
+            data: function () {
+                return {
+                    message: 'goodbye',
+                    bar: 'def'
+                }
+            },
+            created: function () {
+                alert(this.$data.message);
+                // => { message: "goodbye", foo: "abc", bar: "def" }
+            }
+        })
     </script>
 </body>
 </html>
