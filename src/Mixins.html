@@ -47,21 +47,48 @@
         //    }
         //})
 
+        //var mixin = {
+        //    created: function () {
+        //        alert('mixin hook called')
+        //    }
+        //}
+
+        //new Vue({
+        //    mixins: [mixin],
+        //    created: function () {
+        //        alert('component hook called')
+        //    }
+        //})
+
+        //// => "mixin hook called"
+        //// => "component hook called"
+
         var mixin = {
-            created: function () {
-                alert('mixin hook called')
+            methods: {
+                foo: function () {
+                    alert('foo')
+                },
+                conflicting: function () {
+                    alert('from mixin')
+                }
             }
         }
 
-        new Vue({
+        var vm = new Vue({
             mixins: [mixin],
-            created: function () {
-                alert('component hook called')
+            methods: {
+                bar: function () {
+                    alert('bar')
+                },
+                conflicting: function () {
+                    alert('from self')
+                }
             }
         })
 
-        // => "mixin hook called"
-        // => "component hook called"
+        vm.foo() // => "foo"
+        vm.bar() // => "bar"
+        vm.conflicting() // => "from self"
 
     </script>
 </body>
