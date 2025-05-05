@@ -5,17 +5,17 @@
 </head>
 <body>
     <script>
-        // define a mixin object
-        var myMixin = {
-            created: function () {
-                this.hello()
-            },
-            methods: {
-                hello: function () {
-                    alert('hello from mixin!');
-                }
-            }
-        }
+        //// define a mixin object
+        //var myMixin = {
+        //    created: function () {
+        //        this.hello()
+        //    },
+        //    methods: {
+        //        hello: function () {
+        //            alert('hello from mixin!');
+        //        }
+        //    }
+        //}
 
         //// define a component that uses this mixin
         //var Component = Vue.extend({
@@ -24,28 +24,45 @@
 
         //var component = new Component() // => "hello from mixin!"
 
+        //var mixin = {
+        //    data: function () {
+        //        return {
+        //            message: 'hello',
+        //            foo: 'abc'
+        //        }
+        //    }
+        //}
+
+        //new Vue({
+        //    mixins: [mixin, myMixin],
+        //    data: function () {
+        //        return {
+        //            message: 'goodbye',
+        //            bar: 'def'
+        //        }
+        //    },
+        //    created: function () {
+        //        alert(this.$data.message);
+        //        // => { message: "goodbye", foo: "abc", bar: "def" }
+        //    }
+        //})
+
         var mixin = {
-            data: function () {
-                return {
-                    message: 'hello',
-                    foo: 'abc'
-                }
+            created: function () {
+                alert('mixin hook called')
             }
         }
 
         new Vue({
-            mixins: [mixin, myMixin],
-            data: function () {
-                return {
-                    message: 'goodbye',
-                    bar: 'def'
-                }
-            },
+            mixins: [mixin],
             created: function () {
-                alert(this.$data.message);
-                // => { message: "goodbye", foo: "abc", bar: "def" }
+                alert('component hook called')
             }
         })
+
+        // => "mixin hook called"
+        // => "component hook called"
+
     </script>
 </body>
 </html>
