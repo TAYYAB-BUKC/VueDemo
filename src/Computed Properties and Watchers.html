@@ -6,7 +6,7 @@
 <body>
     <div id="example">
         <p>Original message: "{{ message }}"</p>
-        <p>Computed reversed message: "{{ reversedMessage }}"</p>
+        <p>Computed reversed message: "{{ reversedMessage() }}"</p>
     </div>
 
     <script>
@@ -17,6 +17,11 @@
                 message: 'Hello'
             },
             computed: {
+                reversedMessage: function () {
+                    return this.message.split('').reverse().join('')
+                }
+            },
+            methods: {
                 reversedMessage: function () {
                     return this.message.split('').reverse().join('')
                 }
