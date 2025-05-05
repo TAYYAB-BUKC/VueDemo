@@ -4,14 +4,15 @@
 </script>
 
 <template>
-  <main class="main">
-      <!--<RouterView  />-->
+    <main class="main">
+        <!--<RouterView  />-->
         <a href="/">Default</a> |
         <a href="/hello">Hello</a> |
         <a href="/about">About</a> |
+        <a href="/refs">Refs</a> |
         <a href="/non-existent-path">Broken Link</a>
-      <router-view></router-view>
-  </main>
+        <router-view></router-view>
+    </main>
 </template>
 
 <style scoped>
