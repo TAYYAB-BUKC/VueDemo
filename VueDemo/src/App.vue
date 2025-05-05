@@ -1,30 +1,28 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+//import HelloWorld from './components/HelloWorld.vue'
+//import TheWelcome from './components/TheWelcome.vue'
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
+  <main class="main">
+      <!--<RouterView  />-->
+      <router-view></router-view>
   </main>
 </template>
 
 <style scoped>
 header {
-  line-height: 1.5;
+  line-height: 0.5;
 }
 
 .logo {
   display: block;
   margin: 0 auto 2rem;
+}
+
+.main {
+    margin: 200px;
+    margin-left: 250px;
 }
 
 @media (min-width: 1024px) {
