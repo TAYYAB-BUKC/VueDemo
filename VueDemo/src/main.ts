@@ -10,6 +10,7 @@ import Refs from './components/Refs.vue'
 import Tabs from './components/Tabs.vue'
 import LifeCycle from './components/LifeCycle.vue'
 import Vuex from './components/Vuex.vue'
+import store from './store/store'
 
 const routes = [
     { path: '/', component: Default },
@@ -26,4 +27,4 @@ const router = createRouter({
     routes: routes
 });
 
-createApp(App).use(router).mount('#app')
+createApp(App).use(router).use(store).mount('#app')
