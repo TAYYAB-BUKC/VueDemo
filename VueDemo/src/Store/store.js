@@ -40,6 +40,9 @@ export default createStore({
     getters: {
         counterSquared(state) {
             return state.counter * state.counter;
+        },
+        getColorCode(state) {
+            return state.colorCode;
         }
     },
     modules: {
