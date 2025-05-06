@@ -2,6 +2,11 @@
     <div class="counter">
         {{$store.state.counter}}
     </div>
+    <div class="counterSquared">
+        {{$store.state.counter}} *
+        <sup>2</sup> =
+        {{$store.getters.counterSquared}}
+    </div>
     <div class="buttons">
         <button @click="$store.dispatch('decrementCounter')">-</button>
         <button @click="$store.dispatch('incrementCounter')">+</button>
