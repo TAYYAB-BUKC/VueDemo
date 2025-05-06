@@ -12,6 +12,7 @@
         <router-link to="/refs">Refs</router-link> |
         <router-link to="/tabs">Tabs</router-link> |
         <router-link to="/lifecycle">LifeCycle</router-link> |
+        <router-link to="/vuex">Vuex</router-link> |
         <router-link to="/non-existent-path">Broken Link</router-link>
         <router-view></router-view>
     </main>

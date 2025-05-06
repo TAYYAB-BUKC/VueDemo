@@ -9,7 +9,7 @@ import Default from './components/Default.vue'
 import Refs from './components/Refs.vue'
 import Tabs from './components/Tabs.vue'
 import LifeCycle from './components/LifeCycle.vue'
-
+import Vuex from './components/Vuex.vue'
 
 const routes = [
     { path: '/', component: Default },
@@ -17,7 +17,8 @@ const routes = [
     { path: '/about', component: TheWelcome },
     { path: '/refs', component: Refs },
     { path: '/tabs', component: Tabs },
-    { path: '/lifecycle', component: LifeCycle}
+    { path: '/lifecycle', component: LifeCycle },
+    { path: '/vuex', component: Vuex }
 ]
 
 const router = createRouter({
