@@ -3,8 +3,8 @@
         {{$store.state.counter}}
     </div>
     <div class="buttons">
-        <button @click="$store.commit('decrementCounter')">-</button>
-        <button @click="$store.commit('incrementCounter')">+</button>
+        <button @click="$store.dispatch('decrementCounter')">-</button>
+        <button @click="$store.dispatch('incrementCounter')">+</button>
     </div>
 </template>
 
